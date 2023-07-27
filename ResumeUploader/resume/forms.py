@@ -15,10 +15,38 @@ JOB_CITY_CHOICE=[
     ('Bengaluru','Bengaluru'),
     ('Sambalpur','Sambalpur'),    
 ]
+
+QUALIFICATION_CHOICE=(
+    ('M.Tech','M.Tech'),
+    ('B.Tech','B.Tech'),
+    ('Msc','Msc'),
+    ('Bsc','Bsc'),
+    ('BCA','BCA'),
+    ('Phd','Phd'),
+    ('BBA','BBA'),
+    ('MBA','MBA')
+)
+
+SKILLS_CHOICE=(
+    ('Python','Python'),
+    ('Django','Django'),
+    ('Flask','Flask'),
+    ('Java','Java'),
+    ('SQL','SQL'),
+    ('Mongodb','Mongodb'),
+    ('NodeJS','NodeJS'),
+    ('JavaScript','JavaScript'),
+    ('HTML','HTML'),
+    ('PL/SQL','PL/SQL')
+)
 class ResumeForm(forms.ModelForm):
     gender=forms.ChoiceField(choices=GENDER_CHOICE,widget=forms.RadioSelect)
     job_city=forms.MultipleChoiceField(label="Preferred Job Locations",choices=JOB_CITY_CHOICE,
                                        widget=forms.CheckboxSelectMultiple)
+    qualification=forms.ChoiceField(label="Highest Qualification",choices=QUALIFICATION_CHOICE,widget=forms.RadioSelect)
+    institute=forms.CharField(max_length=100,widget=forms.TextInput(attrs={'class':'form-control'}))
+    skills=forms.MultipleChoiceField(choices=SKILLS_CHOICE,
+                                     widget=forms.CheckboxSelectMultiple)
     class Meta:
         model=Resume
         fields="__all__"
@@ -34,7 +62,9 @@ class ResumeForm(forms.ModelForm):
                  'email':forms.EmailInput(attrs={'class':'form-control'}),
                  'job_city':forms.TextInput(attrs={'class':'form-control'}),
                  'profile_image':forms.FileInput(attrs={'class':'form-control'}),
-                 'document_file':forms.FileInput(attrs={'class':'form-control'}),}
+                 'document_file':forms.FileInput(attrs={'class':'form-control'}),
+                 'qualification':forms.Select(attrs={'class':'form-control'}),
+                 'institute':forms.TextInput(attrs={'class':'form-control','value':'','placeholder':'enter institute'}),}
         
     def clean_pin(self):
         pin=self.cleaned_data['pin']

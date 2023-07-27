@@ -1,5 +1,5 @@
 {% extends 'resume/base.html' %}
-
+{% load myfilter %}
 {% block title %} {{block.super}} {{candidate.name}} {% endblock title %}
 {% block header %}
     Candidate Resume
@@ -12,22 +12,25 @@
             <div class="col-sm-10 col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row mx-md-3">
                             <h4 class="text-center mb-5">{{candidate.name}}</h4>
-                            <div class="col-sm-8">
+                            <div class="col-sm-7">
                                <h5> Candidate ID - {{candidate.id}}</h5>
-                               <p> contact Name - {{candidate.name}}</p>
+                               <p> Name - {{candidate.name}}</p>
                                <p> Email Address - {{candidate.email}}</p>
+                               <p> Qualification - {{candidate.qualification}}</p>
+                               <p> Institute - {{candidate.institute}}</p>
+                               <p> Skills - {{candidate.skills | remove_special:"[]'"}}</p>
                                <p> Gender - {{candidate.gender}}</p>
                                <p> Locality - {{candidate.locality}}</p>
                                <p> city - {{candidate.city}}</p>
                                <p> pin code - {{candidate.pin}}</p>
                                <p> state - {{candidate.state}}</p>
-                               <p> job city - {{candidate.job_city}}</p>
+                               <p> Preferred Locations - {{candidate.job_city|remove_special:"[]'"}}</p>
                             </div>
-                            <div class="col-sm-4">
-                                <img class="img-fluid" src="{{candidate.profile_image.url}}" alt="">
-                                <p> Resume Document - <a href="{{candidate.document_file.url}}">download file</a></p>
+                            <div class="col-sm-5">
+                                <img class="img-fluid card" style="height:280px; width:250px;"src="{{candidate.profile_image.url}}" alt="">
+                                <p class="my-2"> Resume Document -{% if candidate.document_file %} <a href="{{candidate.document_file.url}}">download file</a>{% endif %}</p>
                                 <a href="{% url 'home' %}">Back to Home</a>
                             </div>
                         </div>

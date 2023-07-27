@@ -78,3 +78,16 @@ body{
 #id_job_city>div{
     padding-left: 10px;
 }
+
+#id_qualification{
+    display: inline-flex;
+}
+#id_qualification>div{
+    display: inline-flex;
+    padding-left: 5px;
+}
+
+#id_skills>div{
+    display: inline-flex;
+    padding-left:10px;
+}
