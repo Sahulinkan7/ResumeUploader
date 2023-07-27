@@ -19,9 +19,10 @@ class ResumeView(View):
             form.save()
             messages.success(request,"Data saved Successfully ! ")
             form=ResumeForm()
-            
-            return render(request,"resume/home.html",{'form':form})
-        return render(request,"resume/home.html",{'form':form})
+            candidates=Resume.objects.all()
+            return render(request,"resume/home.html",{'form':form,'candidates':candidates})
+        candidates=Resume.objects.all()
+        return render(request,"resume/home.html",{'form':form,'candidates':candidates})
     
 class CandidateView(View):
     def get(self,request,pk):

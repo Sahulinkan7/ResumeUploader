@@ -50,12 +50,15 @@ h1,h2,h3,h4,h5,h6,p{
 .main-btn{
     background-color: var(--primary-color);
     color:var(--white-color);
-    border-radius: 0.755rem;
+    border:1px solid var(--white-color);
+    border-radius: 0.255rem;
     font-weight: 900;
+    outline:none;
+    
 }
 
 body{
-    background-color: rgb(67, 77, 76);
+    background-color: rgb(62, 65, 65);
 }
 
 .errors{
@@ -63,4 +66,15 @@ body{
     color:var(--red-color);
 }
 
-
+#id_gender{
+    display: inline-flex;
+}
+#id_gender>div{
+    padding-left: 10px;
+}
+#id_job_city>div{
+    display: inline-flex;
+}
+#id_job_city>div{
+    padding-left: 10px;
+}

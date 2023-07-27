@@ -16,7 +16,6 @@
                             <h4 class="text-center mb-5">{{candidate.name}}</h4>
                             <div class="col-sm-8">
                                <h5> Candidate ID - {{candidate.id}}</h5>
-                               
                                <p> contact Name - {{candidate.name}}</p>
                                <p> Email Address - {{candidate.email}}</p>
                                <p> Gender - {{candidate.gender}}</p>
@@ -27,8 +26,8 @@
                                <p> job city - {{candidate.job_city}}</p>
                             </div>
                             <div class="col-sm-4">
-                                {{candidate.profile_image}}
-                                <p> Resume Document - {{candidate.document_file}}</p>
+                                <img class="img-fluid" src="{{candidate.profile_image.url}}" alt="">
+                                <p> Resume Document - <a href="{{candidate.document_file.url}}">download file</a></p>
                                 <a href="{% url 'home' %}">Back to Home</a>
                             </div>
                         </div>
