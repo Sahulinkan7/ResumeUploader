@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+:root{
+    --primary-color:#0a63c9;
+    --white-color:#fff;
+    --black-color:#000;
+    --primary-font:'Poppins', sans-serif;
+    --secondary-font: 'Quicksand', sans-serif;
+    --red-color:#db0707;
+}
+
+*,*::after,*::before{
+    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 0.625rem;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 100%;
+}
+
+
+.container h1{
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-weight: 600;
+}
+
+.main-btn{
+    background-color: var(--primary-color);
+    color:var(--white-color);
+    border-radius: 0.755rem;
+    font-weight: 900;
+}
+
+body{
+    background-color: rgb(67, 77, 76);
+}
+
+.errors{
+    font-weight:600;
+    color:var(--red-color);
+}
+
+

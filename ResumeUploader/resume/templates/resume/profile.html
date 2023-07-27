@@ -1,0 +1,41 @@
+{% extends 'resume/base.html' %}
+
+{% block title %} {{block.super}} {{candidate.name}} {% endblock title %}
+{% block header %}
+    Candidate Resume
+{% endblock header %}
+
+{% block content %}
+
+    <section class="container">
+        <div class="row my-3">
+            <div class="col-sm-10 col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="row">
+                            <h4 class="text-center mb-5">{{candidate.name}}</h4>
+                            <div class="col-sm-8">
+                               <h5> Candidate ID - {{candidate.id}}</h5>
+                               
+                               <p> contact Name - {{candidate.name}}</p>
+                               <p> Email Address - {{candidate.email}}</p>
+                               <p> Gender - {{candidate.gender}}</p>
+                               <p> Locality - {{candidate.locality}}</p>
+                               <p> city - {{candidate.city}}</p>
+                               <p> pin code - {{candidate.pin}}</p>
+                               <p> state - {{candidate.state}}</p>
+                               <p> job city - {{candidate.job_city}}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                {{candidate.profile_image}}
+                                <p> Resume Document - {{candidate.document_file}}</p>
+                                <a href="{% url 'home' %}">Back to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
